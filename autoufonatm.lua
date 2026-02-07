@@ -1,4 +1,4 @@
-﻿-- MADE BY @ASHLENGTHEGREAT
+-- MADE BY @ASHLENGTHEGREAT
 local Players = game:GetService("Players")
 local Workspace = game:GetService("Workspace")
 local RunService = game:GetService("RunService")
@@ -16,7 +16,7 @@ local brainrotsList = {
 	"Strawberry Elephant",
 	"Din Din Vaultero",
 	"Grappellino D'Oro",
-        "Martino Gravitino",
+	"Martino Gravitino",
 }
 
 local EQUIP_DELAY = 0.5
