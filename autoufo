@@ -9,7 +9,6 @@ local SpawnMachineRemote = Net:WaitForChild("RF/SpawnMachine.Action")
 
 local player = Players.LocalPlayer
 local oldGui = player.PlayerGui:FindFirstChild("MainUtilityGUI")
-if oldGui then oldGui:Destroy() end
 
 local brainrotsList = {
 	"Galactio Fantasma",
