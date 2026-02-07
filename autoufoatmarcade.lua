@@ -1,4 +1,4 @@
-﻿-- MADE BY @ASHLENGTHEGREAT
+-- MADE BY @ASHLENGTHEGREAT
 local Players = game:GetService("Players")
 local Workspace = game:GetService("Workspace")
 local RunService = game:GetService("RunService")
@@ -16,9 +16,9 @@ local brainrotsList = {
 	"Strawberry Elephant",
 	"Din Din Vaultero",
 	"Grappellino D'Oro",
-    "Martino Gravitino",
 	"Bulbito Bandito Traktorito",
 	"Burgerini Bearini",
+	"Martino Gravitino",
 }
 
 local EQUIP_DELAY = 0.5
@@ -340,3 +340,30 @@ createToggle("Auto Combine", y, function()
 	return autoCombineEnabled
 end)
 
+wait(2)
+local ProximityPromptService = game:GetService("ProximityPromptService")
+
+for _, prompt in ipairs(workspace:GetDescendants()) do
+	if prompt:IsA("ProximityPrompt") then
+		prompt.HoldDuration = 0
+	end
+end
+
+workspace.DescendantAdded:Connect(function(descendant)
+	if descendant:IsA("ProximityPrompt") then
+		descendant.HoldDuration = 0
+	end
+end)
+
+local Players = game:GetService("Players")
+local VirtualUser = game:GetService("VirtualUser")
+
+local player = Players.LocalPlayer
+
+player.Idled:Connect(function()
+    VirtualUser:Button2Down(Vector2.new(0,0), workspace.CurrentCamera.CFrame)
+    task.wait(1)
+    VirtualUser:Button2Up(Vector2.new(0,0), workspace.CurrentCamera.CFrame)
+end)
+
+print("✅ Anti-AFK enabled")
