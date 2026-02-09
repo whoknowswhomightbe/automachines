@@ -13,20 +13,15 @@ if oldGui then oldGui:Destroy() end
 
 local brainrotsList = {
 	"Galactio Fantasma",
-	"Strawberry Elephant",
-	"Din Din Vaultero",
-	"Grappellino D'Oro",
-	"Bulbito Bandito Traktorito",
-	"Burgerini Bearini",
-	"Martino Gravitino",
+	"Freezeti Cobretti",
 }
 
 local EQUIP_DELAY = 0.5
-local autoEquipEnabled = false
+local autoEquipEnabled = true
 local removeVIPEnabled = false
-local autoATMEnabled = false
-local atmTeleportEnabled = false
-local autoCombineEnabled = false
+local autoATMEnabled = true
+local atmTeleportEnabled = true
+local autoCombineEnabled = true
 
 local function isBrainrot(petName)
 	if not petName then return false end
@@ -298,7 +293,7 @@ local function createToggle(text, yPos, callback)
 	btn.TextColor3 = Color3.new(1,1,1)
 	btn.Font = Enum.Font.Gotham
 	btn.TextSize = 14
-	btn.Text = text .. ": OFF"
+	btn.Text = text .. ": ON"
 	btn.Parent = frame
 	Instance.new("UICorner", btn).CornerRadius = UDim.new(0, 8)
 
